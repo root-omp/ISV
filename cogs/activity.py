@@ -24,9 +24,15 @@ class activity(commands.Cog):
 
             Embed(
                 title="Участники в сети",
-                description=f"""
-            {members}
-            """,
+                description=str([i for i in members if [j.id for j in i.roles] in [557933393007083531,
+                                                                                   557938454852403200,
+                                                                                   557934371953180682,
+                                                                                   774863001483477002,
+                                                                                   557934061042270228,
+                                                                                   809497438330552361,
+                                                                                   745516823298048011,
+                                                                                   557932429109886977,
+                                                                                   960552810301227028]].sort(key=lambda member:member.top_role.position)),
                 color=0x00c4ff),
         ])
 
