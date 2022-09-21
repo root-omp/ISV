@@ -7,4 +7,4 @@ class Config:
     prefix = '.'
     intents = Intents.all()
     token = os.environ.get('ISV_TOKEN')
-    test_token = "Nzk1NDMyOTQyMzc2NTgzMjA4.G3mMcb.ZCqILeCyyQWjDOzpvtWsmG1DBrJxhwWhABGaEc"
+    test_token = os.environ.get('ZEUST_TOKEN')
