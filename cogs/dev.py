@@ -73,8 +73,10 @@ class Dev(commands.Cog):
                         color=0xb000
                     ))
             except Exception as e:
-                embed = self.client.embeds.error(
-                    'Произашла ошибка при выполнение кода', 'Разработчикам | Eval')
+                embed = nextcord.Embed(
+                    title='Произашла ошибка при выполнение кода',
+                    description='Разработчикам | Eval',
+                    color=0xff0000)
                 embed.add_field(
                     name='Сама ошибка',
                     value=f'```py\n{repr(e)}\n```',
@@ -82,7 +84,11 @@ class Dev(commands.Cog):
                 )
                 return await ctx.reply(embed=embed)
         else:
-            return await ctx.send(embed=self.client.embeds.error("Укажите код!"))
+            return await ctx.send(embed=nextcord.Embed(title='Укажите код', color=0xff0000))
+
+    @commands.command(aliases=['test'])
+    async def _test(self, ctx): await ctx.send(
+        self.client.get_channel(960552084002963466))
 
 
 # setup

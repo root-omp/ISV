@@ -22,7 +22,7 @@ async def _load(ctx, cog: str = None):
             client.load_extension(f'cogs.{cog}')
             emd = Embed(
                 title='Ког', description=f'Ког {cog} был успешно загружен', color=0xFF7F50)
-        except Exception as e:
+        except Exception:
             return await ctx.reply(embed=Embed(title='Ошибка', description=f'Не найден ког {cog}', color=0xff0000))
     return await ctx.reply(embed=emd)
 
@@ -37,7 +37,7 @@ async def _unload(ctx, cog: str = None):
             client.unload_extension(f'cogs.{cog}')
             emd = Embed(
                 title='Ког', description=f'Ког {cog} был успешно отгружен', color=0xFF7F50)
-        except Exception as e:
+        except Exception:
             return await ctx.reply(embed=Embed(title='Ошибка', description=f'Не найден ког {cog}', color=0xff0000))
     return await ctx.reply(embed=emd)
 
@@ -53,7 +53,7 @@ async def _reload(ctx, cog: str = None):
             client.load_extension(f'cogs.{cog}')
             emd = Embed(
                 title='Ког', description=f'Ког {cog} был успешно перезагружен', color=0xFF7F50)
-        except Exception as e:
+        except Exception:
             return await ctx.reply(embed=Embed(title='Ошибка', description=f'Не найден ког {cog}', color=0xff0000))
     return await ctx.reply(embed=emd)
 
