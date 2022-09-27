@@ -1,8 +1,8 @@
+from datetime import timedelta
 from nextcord import Embed, Member
 from nextcord.ext import commands
 from nextcord.utils import utcnow
 from humanfriendly import parse_timespan
-from datetime import timedelta
 
 
 class mod(commands.Cog):
